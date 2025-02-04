@@ -1,0 +1,77 @@
+
+<body>
+    <button class="Side" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="hau.ico" alt="Logo">
+        </div>
+        <h2>Dashboard</h2>
+        <a href="home">Home</a>
+        <a href="onboarding">Onboarding</a>
+        <a href="offboarding">Offboarding</a>
+        <a href="employeeinfo">Employee Information</a>
+        <div class="dropdown">
+            <a class = "none">Dashboard</a>
+            <div class="dropdown-content">
+                <a href="onboardingana">Onboarding Analytics</a>
+                <a href="offboardingana">Offboarding Analytics</a>
+                <a href="distribution">Employee Distribution</a>
+                <a href="onboardingprogress">Onboarding Report</a>
+                <a href="offboardingprogress">Offboarding Report</a>
+                <a href="auditlogs">Audit Logs Report</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Offboarding Analytics</h1>
+
+        <div class="chart-container">
+            <canvas id="offboardingTrend"></canvas>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td>SOC</td>
+                    <td>2024-01-15</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td><span class="status processing">Processing</span></td>
+                    <td>SNAMS</td>
+                    <td>2024-01-20</td>
+                </tr>
+                <tr>
+                    <td>Robert Brown</td>
+                    <td><span class="status completed">Completed</span></td>
+                    <td>SAS</td>
+                    <td>2024-01-10</td>
+                </tr>
+                <tr>
+                    <td>Emily Davis</td>
+                    <td><span class="status completed">Completed</span></td>
+                    <td>SBA</td>
+                    <td>2024-01-12</td>
+                </tr>
+                <tr>
+                    <td>Michael Johnson</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td>SED</td>
+                    <td>2024-01-18</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+

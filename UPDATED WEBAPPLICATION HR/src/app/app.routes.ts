@@ -9,7 +9,17 @@ import { OnboardingprogressComponent } from './webpages/onboardingprogress/onboa
 import { OnboardingComponent } from './webpages/onboarding/onboarding.component';
 import { OffboardingComponent } from './webpages/offboarding/offboarding.component';
 import { OffboardinganaComponent } from './webpages/offboardingana/offboardingana.component';        
-import { OnboardinganaComponent } from './webpages/onboardingana/onboardingana.component';      
+import { OnboardinganaComponent } from './webpages/onboardingana/onboardingana.component';    
+import { SocComponent } from './webpages/soc/soc.component';
+import { SnamsComponent } from './webpages/snams/snams.component';
+import { SasComponent } from './webpages/sas/sas.component';
+import { SeaComponent } from './webpages/sea/sea.component';
+import { SbaComponent } from './webpages/sba/sba.component';
+import { FullTimeComponent } from './webpages/full-time/full-time.component';
+import { PartTimeComponent } from './webpages/part-time/part-time.component';
+import { ContractComponent } from './webpages/contract/contract.component';
+import { ProbationComponent } from './webpages/probation/probation.component';
+
 
 
 export const routes: Routes = [
@@ -65,4 +75,41 @@ export const routes: Routes = [
                 path: 'onboardingana',
                 component: OnboardinganaComponent
             },
+            {
+                path: 'soc',
+                component: SocComponent
+            },
+            {
+                path: 'snams',
+                component: SnamsComponent
+            },
+            {
+                path: 'sas',
+                component: SasComponent
+            },
+            {
+                path: 'sea',
+                component: SeaComponent
+            },
+            {
+                path: 'sba',
+                component: SbaComponent
+            },
+            {
+                path: 'full-time',
+                component: FullTimeComponent
+            },
+            {
+                path: 'part-time',
+                component: PartTimeComponent
+            },
+            {
+                path: 'contract',
+                component: ContractComponent
+            },
+            {
+                path: 'probation',
+                component: ProbationComponent
+            },
+            
 ];

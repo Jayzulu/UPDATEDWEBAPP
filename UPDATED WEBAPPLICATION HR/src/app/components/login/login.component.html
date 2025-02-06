@@ -1,0 +1,31 @@
+<section class="vh-100">
+    <div class="container">
+      <div class="row">
+        <div class="col image-col">
+          <img src="hau.ico" alt="Holy Angel University Logo" class="img-fluid">
+        </div>
+        <div class="col form-col">
+          <form (ngSubmit)="login()">
+            <h1>Human Resource Management Office</h1>
+            <div class="divider"></div>
+  
+            <!-- Email input with ngModel binding -->
+            <div class="form-group">
+              <input type="email" [(ngModel)]="email" id="email" placeholder=" " required>
+              <label for="email">Email address</label>
+            </div>
+  
+            <!-- Password input with ngModel binding -->
+            <div class="form-group password-group">
+              <input [type]="passwordFieldType" [(ngModel)]="password" id="password" placeholder=" " required>
+              <label for="password">Password</label>
+              <!-- <i class="toggle-password fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()"></i> -->
+            </div>
+  
+            <button type="submit" class="btn login-btn">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

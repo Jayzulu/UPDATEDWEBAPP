@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { LoginandsignupComponent } from './webpages/loginandsignup/loginandsignup.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/register/register.component';
 import { HomeComponent } from './webpages/home/home.component';
 import { DistributionComponent } from './webpages/distribution/distribution.component';
 import { AuditlogsComponent } from './webpages/auditlogs/auditlogs.component';
@@ -28,13 +29,17 @@ import { ProbationComponent } from './webpages/probation/probation.component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'loginandsignup',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
     {
-        path: 'loginandsignup',
-        component: LoginandsignupComponent
+        path: 'login',
+        component: LoginComponent
     },
+            {
+                path: 'signup',
+                component: SignupComponent
+            },
 
             {
                 path: 'home',

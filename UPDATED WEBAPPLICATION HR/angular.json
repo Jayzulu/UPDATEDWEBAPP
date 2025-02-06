@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WebApplicationHR": {
+    "web-application-hr": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "WebApplicationHR:build:production"
+              "buildTarget": "web-application-hr:build:production"
             },
             "development": {
-              "buildTarget": "WebApplicationHR:build:development"
+              "buildTarget": "web-application-hr:build:development"
             }
           },
           "defaultConfiguration": "development"

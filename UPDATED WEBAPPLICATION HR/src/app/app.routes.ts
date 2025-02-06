@@ -15,6 +15,9 @@ import { SnamsComponent } from './webpages/snams/snams.component';
 import { SasComponent } from './webpages/sas/sas.component';
 import { SeaComponent } from './webpages/sea/sea.component';
 import { SbaComponent } from './webpages/sba/sba.component';
+import { ShtmComponent } from './webpages/shtm/shtm.component';
+import { SedComponent } from './webpages/sed/sed.component';
+import { CcjefComponent } from './webpages/ccjef/ccjef.component';
 import { FullTimeComponent } from './webpages/full-time/full-time.component';
 import { PartTimeComponent } from './webpages/part-time/part-time.component';
 import { ContractComponent } from './webpages/contract/contract.component';
@@ -75,6 +78,7 @@ export const routes: Routes = [
                 path: 'onboardingana',
                 component: OnboardinganaComponent
             },
+            // NEW ROUTES
             {
                 path: 'soc',
                 component: SocComponent
@@ -94,6 +98,18 @@ export const routes: Routes = [
             {
                 path: 'sba',
                 component: SbaComponent
+            },
+            {
+                path: 'sed',
+                component: SedComponent
+            },
+            {
+                path: 'shtm',
+                component: ShtmComponent
+            },
+            {
+                path: 'ccjef',
+                component: CcjefComponent
             },
             {
                 path: 'full-time',

@@ -27,10 +27,10 @@ export class DistributionComponent implements AfterViewInit {
     this.chartDepartment = new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ['SBA', 'SEA', 'SOC', 'SAS', 'SNAMS'],
+        labels: ['SBA', 'SEA', 'SOC', 'SAS', 'SNAMS', 'SED', 'SHTM', 'CCJEF'],
         datasets: [{
-          data: [20, 30, 25, 10, 15],
-          backgroundColor: ['#FF5722', '#4CAF50', '#03A9F4', '#FFC107', '#9C27B0']
+          data: [20, 30, 25, 10, 15, 10, 45, 30],
+          backgroundColor: ['#cc9933', '#cc3300', '#FF9900', '#663333', '#006600','#003366', '#cc3366', '#800080' ]
         }]
       },
       options: {
@@ -53,11 +53,11 @@ export class DistributionComponent implements AfterViewInit {
     this.chartEmployment = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Full-Time', 'Part-Time', 'Contract'],
+        labels: ['Full-Time', 'Part-Time', 'Contract', 'Probation'],
         datasets: [{
           label: 'Count',
-          data: [60, 25, 15],
-          backgroundColor: ['#FF9800', '#9C27B0', '#4CAF50']
+          data: [60, 25, 15, 10],
+          backgroundColor: ['#FF9800', '#d96459', '#4CAF50', '#f2e394']
         }]
       },
       options: {
@@ -91,6 +91,15 @@ export class DistributionComponent implements AfterViewInit {
         break;
       case 'SNAMS':
         this.router.navigate(['/snams']);
+        break;
+        case 'SED':
+        this.router.navigate(['/sed']);
+        break;
+        case 'SHTM':
+        this.router.navigate(['/shtm']);
+        break;
+        case 'CCJEF':
+        this.router.navigate(['/ccjef']);
         break;
       default:
         break;

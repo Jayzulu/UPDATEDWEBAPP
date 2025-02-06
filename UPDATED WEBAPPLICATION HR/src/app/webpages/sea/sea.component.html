@@ -1,1 +1,85 @@
-<p>sea works!</p>
+<body>
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="hau.ico" alt="Logo">
+        </div>
+        <h2>Dashboard</h2>
+        <a href="home">Home</a>
+        <a href="onboarding">Onboarding</a>
+        <a href="offboarding">Offboarding</a>
+        <a href="employeeinfo">Employee Information</a>
+        <div class="dropdown">
+            <a class = "none">Dashboard</a>
+            <div class="dropdown-content">
+                <a href="onboardingana">Onboarding Analytics</a>
+                <a href="offboardingana">Offboarding Analytics</a>
+                <a href="distribution">Employee Distribution</a>
+                <a href="onboardingprogress">Onboarding Report</a>
+                <a href="offboardingprogress">Offboarding Report</a>
+                <a href="auditlogs">Audit Logs Report</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>School of Engineering and Architecture Employees</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Program</th>
+                        <th>Completed Task</th>
+                        <th>Pending Task</th>
+                        <th>Automated Notification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan T. Pedro</td>
+                        <td>Aeronautical Engineering</td>
+                        <td>Orientation</td>
+                        <td>Contract</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Juan A. Salasar</td>
+                        <td>Civil Engineering</td>
+                        <td>Orientation</td>
+                        <td>Contract</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Jepoy D. Dizon</td>
+                        <td>Architecture</td>
+                        <td>Orientation</td>
+                        <td>Contract</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Marie C. Tes</td>
+                        <td>Computer Engineering</td>
+                        <td>Orientation</td>
+                        <td>Contract</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Kabataan A. Uleym</td>
+                        <td>Industrial Engineering</td>
+                        <td>Orientation</td>
+                        <td>Contract</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+        }
+    </script>
+</body>

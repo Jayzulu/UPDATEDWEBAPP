@@ -3,18 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { OnboardComponent } from './onboard/onboard.component';
 import { OffboardComponent } from './offboard/offboard.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
-import path from 'path';
 import { DistributionComponent } from './distribution/distribution.component';
 import { OnboardingAnalyticsComponent } from './onboarding-analytics/onboarding-analytics.component';
 import { OffboardingAnalyticsComponent } from './offboarding-analytics/offboarding-analytics.component';
 import { OnboardingReportComponent } from './onboarding-report/onboarding-report.component';
 import { OffboardingReportComponent } from './offboarding-report/offboarding-report.component';
 import { AuditLogsComponent } from './audit-logs/audit-logs.component';
+import { OffboardsComponent } from './offboards/offboards.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'employee-distribution', pathMatch: 'full'},
   {path: 'onboard', component: OnboardComponent},
-  {path: 'offboard', component: OffboardComponent},
+  {path: 'offboards', component: OffboardsComponent},
   {path: 'employee-info', component: EmployeeInfoComponent},
   {path: 'onboarding-analytics', component: OnboardingAnalyticsComponent},
   {path: 'offboarding-analytics', component: OffboardingAnalyticsComponent},

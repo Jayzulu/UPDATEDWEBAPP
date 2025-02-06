@@ -78,7 +78,7 @@ export class DistributionComponent {
 
   navigateToRoute(label: string) {
     switch (label) {
-      case 'SBA': this.router.navigate(['/sba']); break;
+      case 'SBA': this.router.navigateByUrl('/dashboard/employee-distribution/sba'); break;
       case 'SEA': this.router.navigate(['/sea']); break;
       case 'SOC': this.router.navigate(['/soc']); break;
       case 'SAS': this.router.navigate(['/sas']); break;

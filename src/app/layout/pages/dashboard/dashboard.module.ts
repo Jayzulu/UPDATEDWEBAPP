@@ -14,7 +14,6 @@ import { OffboardingAnalyticsComponent } from './offboarding-analytics/offboardi
 import { OnboardingReportComponent } from './onboarding-report/onboarding-report.component';
 import { OffboardingReportComponent } from './offboarding-report/offboarding-report.component';
 import { AuditLogsComponent } from './audit-logs/audit-logs.component';
-import { OffboardsComponent } from './offboards/offboards.component';
 
 
 @NgModule({
@@ -30,7 +29,6 @@ import { OffboardsComponent } from './offboards/offboards.component';
     OnboardingReportComponent,
     OffboardingReportComponent,
     AuditLogsComponent,
-    OffboardsComponent
   ],
   imports: [
     CommonModule,

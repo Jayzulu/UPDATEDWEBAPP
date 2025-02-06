@@ -9,12 +9,11 @@ import { OffboardingAnalyticsComponent } from './offboarding-analytics/offboardi
 import { OnboardingReportComponent } from './onboarding-report/onboarding-report.component';
 import { OffboardingReportComponent } from './offboarding-report/offboarding-report.component';
 import { AuditLogsComponent } from './audit-logs/audit-logs.component';
-import { OffboardsComponent } from './offboards/offboards.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'employee-distribution', pathMatch: 'full'},
   {path: 'onboard', component: OnboardComponent},
-  {path: 'offboards', component: OffboardsComponent},
+  {path: 'offboard', component: OffboardComponent},
   {path: 'employee-info', component: EmployeeInfoComponent},
   {path: 'onboarding-analytics', component: OnboardingAnalyticsComponent},
   {path: 'offboarding-analytics', component: OffboardingAnalyticsComponent},

@@ -1,1 +1,50 @@
-<p>offboard works!</p>
+<div class="offboarding-container">
+    <h4>Offboarding</h4>
+    <div class="form-container">
+      <div class="section">
+        <h3>Status</h3>
+        <div class="form-group">
+          <img src="picpro.jpg" alt="User Icon" class="user-icon" />
+          <label>Name:</label>
+          <input type="text" formControlName="name" placeholder="*Insert Name*" />
+        </div>
+        <div class="form-group">
+          <label>Effective Date Separated</label>
+          <input type="date" formControlName="effectiveDate" />
+        </div>
+        <div class="form-group">
+          <label>Clearance Form</label>
+          <select formControlName="clearanceForm">
+            <option>Select</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Certifications</label>
+          <select formControlName="certifications">
+            <option>Select</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="section">
+        <div class="form-group">
+          <label>Personal Email:</label>
+          <input type="email" formControlName="personalEmail" placeholder="Email@gmail.com" />
+        </div>
+        <div class="form-group">
+          <label>Exit Interviews</label>
+          <select formControlName="exitInterview">
+            <option>Select</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Automated Notification</label>
+          <select formControlName="automatedNotification">
+            <option>Select</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  
+    <button (click)="submitForm()">Submit</button>
+  </div>

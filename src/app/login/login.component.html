@@ -1,61 +1,57 @@
 <section class="vh-100">
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col image-col">
-          <img src="hau.ico" alt="Holy Angel University Logo" class="img-fluid">
-        </div>
-        <div class="col form-col">
-          @if(isLoginView){            
-            <form>
-              <h1>Human Resource Management Office</h1>
-              <div class="divider">
-              </div>
-              <div class="form-group">
-                  <input type="email" id="email" placeholder=" ">
-                  <label for="email">Email address</label>
-                </div>
-                <div class="form-group password-group">
-                  <input [type]="passwordFieldType" id="password" placeholder=" ">
-                  <label for="password">Password</label>
-                  <i class="toggle-password fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()"></i>
-              </div>
-                
-              <button type="button" class="btn login-btn" (click)="homepage()">Login</button>
-            </form>
-          }
-        </div>
+  <div class="container">
+    <div class="row">
+      <!-- Logo Section -->
+      <div class="col image-col">
+        <img src="hau.ico" alt="Holy Angel University Logo" class="img-fluid">
       </div>
-    </div> -->
+      <!-- Form Section -->
+      <div class="col form-col">
+        <!-- Angular Conditional Rendering -->
+        <div *ngIf="isLoginView">
+          <form (ngSubmit)="homepage()">
+            <h1>Human Resource Management Office</h1>
+            <div class="divider"></div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col image-col">
-          <img src="hau.ico" alt="Holy Angel University Logo" class="img-fluid">
-        </div>
-        <div class="col form-col">
-          @if(isLoginView){            
-            <form>
-              <h1>Human Resource Management Office</h1>
-              <div class="divider">
-              </div>
-              <div class="form-group">
-                  <input type="email" id="email" placeholder=" ">
-                  <label for="email">Email address</label>
-                </div>
-                <div class="form-group password-group">
-                  <input [type]="passwordFieldType" id="password" placeholder=" ">
-                  <label for="password">Password</label>
-                  <i class="toggle-password fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()"></i>
-              </div>
-                
-             <div class="text-center">
-                <button type="button" class="btn login-btn mb-3" (click)="homepage()">Login</button> <br>
-                <a href="" class="">Forgot Password</a>
-             </div>
-            </form>
-          }
+            <!-- Email Input -->
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                placeholder=" "
+                [(ngModel)]="email"
+                name="email"
+                required
+              />
+              <label for="email">Email address</label>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group password-group">
+              <input
+                [type]="passwordFieldType"
+                id="password"
+                placeholder=" "
+                [(ngModel)]="password"
+                name="password"
+                required
+              />
+              <label for="password">Password</label>
+              <i
+                class="toggle-password fas"
+                [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'"
+                (click)="togglePasswordVisibility()"
+              ></i>
+            </div>
+
+            <!-- Login Button and Forgot Password Link -->
+            <div class="text-center">
+              <button type="submit" class="btn login-btn mb-3">Login</button> <br>
+              <a href="#" class="">Forgot Password</a>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

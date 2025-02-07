@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +8,44 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-
+  email: string = '';
+  password: string = '';
   isLoginView: boolean = true;
   passwordFieldType: string = 'password';
 
-  constructor(private router: Router, private titleService: Title) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   homepage() {
-    this.router.navigate(['/home']);
+    this.email = this.email.trim();
+    this.password = this.password.trim();
+
+    if (!this.email || !this.password) {
+      console.error('Email and password must not be empty');
+      return;
+    }
+
+    if (!this.isValidEmail(this.email)) {
+      console.error('Invalid email format');
+      return;
+    }
+
+    this.authService.login(this.email, this.password)
+      .then(() => this.router.navigate(['/home']))
+      .catch((error: any) => {
+        console.error('Login failed', error);
+      });
   }
+
+  // Add this method to validate email format
+  private isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
   togglePasswordVisibility() {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
-  
-
 }

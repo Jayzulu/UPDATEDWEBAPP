@@ -47,16 +47,28 @@ export class EmployeeInfoComponent {
       emp.name.toLowerCase().includes(query.toLowerCase())
     );
   }
-  updateEmployee(employee: any) {
-    console.log("Updating employee:", employee);
+  // updateEmployee(employee: any) {
+  //   console.log("Updating employee:", employee);
+  // }
+  
+  // deleteEmployee(employee: any) {
+  //   console.log("Deleting employee:", employee);
+  // }
+  
+  // moveToOffboarding(employee: any) {
+  //   console.log("Moving to offboarding:", employee);
+  // }
+
+  updateEmployee() {
+    console.log("Updating employee:");
   }
   
-  deleteEmployee(employee: any) {
-    console.log("Deleting employee:", employee);
+  deleteEmployee() {
+    console.log("Deleting employee:");
   }
   
-  moveToOffboarding(employee: any) {
-    console.log("Moving to offboarding:", employee);
+  moveToOffboarding() {
+    console.log("Moving to offboarding:");
   }
   
 

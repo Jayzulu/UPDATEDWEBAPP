@@ -9,15 +9,13 @@
         <span><strong>{{ employee.name }}</strong></span>
         <div class="employee-actions">
           <button class="button" (click)="openModal(employee)">View Details</button>
-          <button class="button" (click)="updateEmployee(employee)">Update</button>
-          <button class="button" (click)="deleteEmployee(employee)">Delete</button>
-          <button class="button" (click)="moveToOffboarding(employee)">Move to Offboarding</button>
+
         </div>
       </div>
     </div>
   
     <div class="modal-overlay" *ngIf="selectedEmployee">
-      <div class="modal-content">
+      <div class="modal-content pb-5">
         <span class="close-btn" (click)="closeModal()">&times;</span>
         <h2>{{ selectedEmployee.name }}</h2>
         <p><strong>Contact Number:</strong> {{ selectedEmployee.contact }}</p>
@@ -28,6 +26,11 @@
         <p><strong>Status:</strong> {{ selectedEmployee.status }}</p>
         <p><strong>Date Hired:</strong> {{ selectedEmployee.dateHired }}</p>
         <p><strong>Document Submitted:</strong> {{ selectedEmployee.documents }}</p>
+        <div class="pt-3">
+          <button class="button" (click)="updateEmployee()">Update</button>
+          <button class="button mx-3" (click)="deleteEmployee()">Delete</button>
+          <button class="button" (click)="moveToOffboarding()">Move to Offboarding</button>
+        </div>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  // {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: '',
     component: LayoutComponent,  

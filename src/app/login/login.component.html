@@ -48,8 +48,10 @@
                   <i class="toggle-password fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()"></i>
               </div>
                 
-              <button type="button" class="btn login-btn" (click)="homepage()">Login</button>
-              <a href="">Forgot Password</a>
+             <div class="text-center">
+                <button type="button" class="btn login-btn mb-3" (click)="homepage()">Login</button> <br>
+                <a href="" class="">Forgot Password</a>
+             </div>
             </form>
           }
         </div>

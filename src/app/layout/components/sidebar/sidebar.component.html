@@ -1,0 +1,35 @@
+<!-- <button class="Side" onclick="toggleSidebar()">☰</button> -->
+<div class="sidebar" id="sidebar">
+    <div class="logo">
+        <img src="hau.ico" alt="Logo">
+    </div>
+    <h2>Dashboard</h2>
+    <a routerLink="/home">Home</a>
+    <a routerLink="/dashboard/onboard">Onboarding</a>
+    <a routerLink="/dashboard/offboard">Offboarding</a>
+    <a routerLink="/dashboard/employee-distribution">Employee Distribution</a>
+    <a routerLink="/dashboard/employee-info">Employee Information</a>
+
+    <div class="dropdown">
+        <a>Analytics & Reports</a>
+        <div class="dropdown-content">
+            <a routerLink="/dashboard/onboarding-analytics">Onboarding Analytics</a>
+            <a routerLink="/dashboard/offboarding-analytics">Offboarding Analytics</a>
+            <a routerLink="/dashboard/onboarding-report">Onboarding Report</a>
+            <a routerLink="/dashboard/offboarding-report">Offboarding Report</a>
+            <a routerLink="/dashboard/audit-logs">Audit Logs Report</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user-shield me-2"></i> 
+          <strong>jvic</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" (click)="logout()">Sign out</a></li>
+        </ul>
+    </div>
+</div>
+

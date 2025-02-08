@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Chart } from 'chart.js/auto';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-distribution',
@@ -11,14 +11,37 @@ import { Router } from '@angular/router';
 export class DistributionComponent {
   @ViewChild('departmentDistribution') departmentChartRef!: ElementRef;
   @ViewChild('employmentStatus') employmentChartRef!: ElementRef;
+
   chartDepartment: any;
   chartEmployment: any;
+  showContent = true;
+  private routerSubscription!: Subscription;
 
   constructor(private router: Router) {}
 
-  ngAfterViewInit(): void {
-    this.renderDepartmentDistribution();
-    this.renderEmploymentStatus();
+  ngOnInit(): void {
+    this.routerSubscription = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.showContent = this.router.url === '/dashboard/distribution';
+
+        if (this.showContent) {
+          this.destroyCharts();
+          setTimeout(() => {
+            this.renderDepartmentDistribution();
+            this.renderEmploymentStatus();
+          }, 0);
+        }
+      }
+    });
+  }
+
+  ngAfterViewChecked(): void {
+    if (this.showContent && !this.chartDepartment && !this.chartEmployment) {
+      setTimeout(() => {
+        this.renderDepartmentDistribution();
+        this.renderEmploymentStatus();
+      }, 0);
+    }
   }
 
   renderDepartmentDistribution() {
@@ -78,15 +101,31 @@ export class DistributionComponent {
 
   navigateToRoute(label: string) {
     switch (label) {
-      case 'SBA': this.router.navigateByUrl('/dashboard/employee-distribution/sba'); break;
-      case 'SEA': this.router.navigate(['/sea']); break;
-      case 'SOC': this.router.navigate(['/soc']); break;
-      case 'SAS': this.router.navigate(['/sas']); break;
-      case 'SNAMS': this.router.navigate(['/snams']); break;
-      case 'SED': this.router.navigate(['/sed']); break;
-      case 'SHTM': this.router.navigate(['/shtm']); break;
-      case 'CCJEF': this.router.navigate(['/ccjef']); break;
+      case 'SBA': this.router.navigateByUrl('/dashboard/distribution/sba'); break;
+      case 'SEA': this.router.navigate(['/dashboard/distribution/sea']); break;
+      case 'SOC': this.router.navigate(['/dashboard/distribution/soc']); break;
+      case 'SAS': this.router.navigate(['/dashboard/distribution/sas']); break;
+      case 'SNAMS': this.router.navigate(['/dashboard/distribution/snams']); break;
+      case 'SED': this.router.navigate(['/dashboard/distribution/sed']); break;
+      case 'SHTM': this.router.navigate(['/dashboard/distribution/shtm']); break;
+      case 'CCJEF': this.router.navigate(['/dashboard/distribution/ccjef']); break;
       default: break;
+    }
+  }
+  destroyCharts() {
+    if (this.chartDepartment) {
+      this.chartDepartment.destroy();
+      this.chartDepartment = null;
+    }
+    if (this.chartEmployment) {
+      this.chartEmployment.destroy();
+      this.chartEmployment = null;
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
     }
   }
 }

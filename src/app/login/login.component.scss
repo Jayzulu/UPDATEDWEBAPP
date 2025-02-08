@@ -3,20 +3,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(to right, #800020, #cca43b);
+    // background: linear-gradient(to right, #800020, #cca43b);
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/holy.jpg') ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/holy.jpg');
   }
   
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding: 20px;
-    
-  
+    align-items: center;
   }
   
   .row {
@@ -41,9 +39,8 @@
     white-space: nowrap;
     flex: 1;
     padding: 50px;
-    background-color: #fff9e7;
+    // background-color: #fff9e7;
     border-radius: 5%;
-    
   }
   
   .lead {

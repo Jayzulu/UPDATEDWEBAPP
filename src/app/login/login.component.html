@@ -1,18 +1,20 @@
 <section class="vh-100">
-  <div class="container">
-    <div class="row">
+  <div class="container h-100 w-25">
+    <div class="">
       <!-- Logo Section -->
-      <div class="col image-col">
+      <!-- <div class="col image-col">
         <img src="hau.ico" alt="Holy Angel University Logo" class="img-fluid">
-      </div>
+      </div> -->
       <!-- Form Section -->
-      <div class="col form-col">
+      <div class=" form-col bg-white bg-opacity-50">
         <!-- Angular Conditional Rendering -->
         <div *ngIf="isLoginView">
-          <form (ngSubmit)="homepage()">
-            <h1>Human Resource Management Office</h1>
-            <div class="divider"></div>
-
+          <form (ngSubmit)="homepage()" class="">
+            <div class="d-flex justify-content-center px-5 mx-2">
+                <img src="hau.ico" alt="Holy Angel University Logo" class="img-fluid" style="width: 35%;">
+                <h1 class="text-center my-auto">Human Resource <br> Management Office</h1>
+            </div>
+            <hr class="text-dark">
             <!-- Email Input -->
             <div class="form-group">
               <input

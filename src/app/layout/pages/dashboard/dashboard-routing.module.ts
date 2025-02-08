@@ -9,14 +9,14 @@ import { OffboardingReportComponent } from './offboarding-report/offboarding-rep
 import { AuditLogsComponent } from './audit-logs/audit-logs.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'employee-distribution', pathMatch: 'full'},
+  {path: '', redirectTo: 'distribution', pathMatch: 'full'},
   {path: 'onboard', component: OnboardComponent},
   {path: 'offboard', component: OffboardComponent},
   {path: 'employee-info', component: EmployeeInfoComponent},
   {path: 'onboarding-report', component: OnboardingReportComponent},
   {path: 'offboarding-report', component: OffboardingReportComponent},
   {path: 'audit-logs', component: AuditLogsComponent},
-  {path: 'employee-distribution', loadChildren: () => import('./distribution/distribution.module').then(m => m.DistributionModule)},
+  {path: 'distribution', loadChildren: () => import('./distribution/distribution.module').then(m => m.DistributionModule)},
 ];
 
 @NgModule({

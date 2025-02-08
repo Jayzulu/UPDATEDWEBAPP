@@ -1,7 +1,6 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Chart } from 'chart.js/auto';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Chart } from 'chart.js/auto';
 
 @Component({
   selector: 'app-distribution',

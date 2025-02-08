@@ -1,15 +1,32 @@
 <div class="onboarding-container">
   <header>
-      <h1>Onboarding</h1>
+      <h4>Onboarding</h4>
   </header>
-  <form #onboardingForm="ngForm" (ngSubmit)="onSubmit(onboardingForm)">
-    <div class="onboarding-form">
-        <div class="profile-container" (click)="onFileSelect()">
-          <img [src]="formData.profileImageUrl || 'assets/default-avatar.png'" alt="Profile Image">
+  <form #onboardingForm="ngForm" (ngSubmit)="onSubmit(onboardingForm)" class="onboard-container">
+    <!-- <div class="onboarding-form w-100">
+        <div class="profile-container mx-auto" (click)="onFileSelect()">
+          <img [src]="formData.profileImageUrl || 'assets/default-avatar.png'">
             <span class="upload-text">Upload Image</span>
             <input type="file" #fileInput (change)="uploadImage($event)" accept="image/*" hidden>
         </div>
-    </div>
+    </div> -->
+
+    <!-- <div class="onboarding-form w-100">
+            <div class="profile-container mx-auto" (click)="onFileSelect()">
+                <img [src]="profileImage || 'assets/default-avatar.png'"class="profile-pic">
+                <span class="upload-text">Upload Image</span>
+                <input type="file" #fileInput (change)="uploadImage($event)" accept="image/*" hidden>
+            </div>
+        </div> -->
+
+        <div class="onboarding-form w-100">
+            <div class="profile-container mx-auto" (click)="fileInput.click()">
+              <img [src]="profileImage" class="w-25" alt="Profile Picture">
+              <span class="upload-text">Upload Image</span>
+              <input type="file" #fileInput (change)="uploadImage($event)" accept="image/*" hidden>
+            </div>
+          </div>
+          
 
     <div class="form-group">
         <label>Name</label>

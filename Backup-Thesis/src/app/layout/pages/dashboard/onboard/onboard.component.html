@@ -1,0 +1,59 @@
+<div class="onboarding-container">
+    <header>
+        <h1>Onboarding</h1>
+    </header>
+    <div class="onboarding-form">
+        <div class="profile-container" (click)="onFileSelect()">
+            <img [src]="profileImage || 'default-avatar.png'"class="profile-pic">
+            <span class="upload-text">Upload Image</span>
+            <input type="file" #fileInput (change)="uploadImage($event)" accept="image/*" hidden>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Enter Full Name">
+    </div>
+    <div class="form-group">
+        <label>Employee Email</label>
+        <input type="email" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+        <label>Employment Date</label>
+        <input type="date">
+    </div>
+    <div class="form-group">
+        <label>Employment Type</label>
+        <select>
+            <option>Select</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Probation</option>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Department</label>
+        <select>
+            <option>Select</option>
+            <option>School Of Business and Accountancy (SBA)</option>
+            <option>School Of Engineering and Architecture (SEA)</option>
+            <option>School Of Arts and Sciences (SAS)</option>
+            <option>School Of Computing (SOC)</option>
+            <option>School Of Hospitality and Tourism Management (SHTM)</option>
+            <option>School Of Education (SED)</option>
+            <option>School Of Nursing and Allied Medical Sciences (SNAMS)</option>
+            <option>College of Criminal Justice Education and Forensics (CCJEF)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Automated Notification</label>
+        <select>
+            <option>Select</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </div>
+    <button class="add-new-employee">Add This Employee</button>
+
+</div>

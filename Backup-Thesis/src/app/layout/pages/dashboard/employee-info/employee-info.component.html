@@ -1,0 +1,37 @@
+<div class="content">
+    <h1>Employee Information</h1>
+    <div class="search">
+      <input type="text" placeholder="Search Employees" [(ngModel)]="searchQuery" (input)="searchEmployee(searchQuery)">
+    </div>
+  
+    <div class="employee-list">
+      <div *ngFor="let employee of employees" class="employee-item">
+        <span><strong>{{ employee.name }}</strong></span>
+        <div class="employee-actions">
+          <button class="button" (click)="openModal(employee)">View Details</button>
+
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal-overlay" *ngIf="selectedEmployee">
+      <div class="modal-content pb-5">
+        <span class="close-btn" (click)="closeModal()">&times;</span>
+        <h2>{{ selectedEmployee.name }}</h2>
+        <p><strong>Contact Number:</strong> {{ selectedEmployee.contact }}</p>
+        <p><strong>Email:</strong> {{ selectedEmployee.email }}</p>
+        <p><strong>Department:</strong> {{ selectedEmployee.department }}</p>
+        <p><strong>Location:</strong> {{ selectedEmployee.location }}</p>
+        <p><strong>Employment Type:</strong> {{ selectedEmployee.employmentType }}</p>
+        <p><strong>Status:</strong> {{ selectedEmployee.status }}</p>
+        <p><strong>Date Hired:</strong> {{ selectedEmployee.dateHired }}</p>
+        <p><strong>Document Submitted:</strong> {{ selectedEmployee.documents }}</p>
+        <div class="pt-3">
+          <button class="button" (click)="updateEmployee()">Update</button>
+          <button class="button mx-3" (click)="deleteEmployee()">Delete</button>
+          <button class="button" (click)="moveToOffboarding()">Move to Offboarding</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

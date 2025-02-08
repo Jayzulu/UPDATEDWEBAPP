@@ -11,7 +11,7 @@ import { finalize } from 'rxjs/operators';
 })
 export class OnboardComponent {
   @ViewChild('fileInput') fileInput!: ElementRef;
-  profileImage: string = 'assets/default-avatar.png';
+  profileImage: string = 'picpro.jpg';
   selectedFile: File | null = null;
 
   formData = {
@@ -59,6 +59,7 @@ export class OnboardComponent {
     };
     reader.readAsDataURL(file);
   }
+  
 
   async onSubmit(form: NgForm) {
     if (form.valid) {

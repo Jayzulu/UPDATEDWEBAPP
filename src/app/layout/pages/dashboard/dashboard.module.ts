@@ -12,6 +12,7 @@ import { OnboardingReportComponent } from './onboarding-report/onboarding-report
 import { OffboardingReportComponent } from './offboarding-report/offboarding-report.component';
 import { AuditLogsComponent } from './audit-logs/audit-logs.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component';
     CommonModule,
     DashboardRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class DashboardModule { }

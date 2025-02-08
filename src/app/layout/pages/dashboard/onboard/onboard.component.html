@@ -1,10 +1,11 @@
 <div class="onboarding-container">
-    <header>
-        <h1>Onboarding</h1>
-    </header>
+  <header>
+      <h1>Onboarding</h1>
+  </header>
+  <form #onboardingForm="ngForm" (ngSubmit)="onSubmit(onboardingForm)">
     <div class="onboarding-form">
         <div class="profile-container" (click)="onFileSelect()">
-            <img [src]="profileImage || 'default-avatar.png'"class="profile-pic">
+          <img [src]="formData.profileImageUrl || 'assets/default-avatar.png'" alt="Profile Image">
             <span class="upload-text">Upload Image</span>
             <input type="file" #fileInput (change)="uploadImage($event)" accept="image/*" hidden>
         </div>
@@ -12,48 +13,47 @@
 
     <div class="form-group">
         <label>Name</label>
-        <input type="text" placeholder="Enter Full Name">
+        <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Enter Full Name" required>
     </div>
     <div class="form-group">
         <label>Employee Email</label>
-        <input type="email" placeholder="Enter Email">
+        <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Enter Email" required>
     </div>
     <div class="form-group">
         <label>Employment Date</label>
-        <input type="date">
+        <input type="date" name="employmentDate" [(ngModel)]="formData.employmentDate" required>
     </div>
     <div class="form-group">
         <label>Employment Type</label>
-        <select>
-            <option>Select</option>
-            <option>Full-time</option>
-            <option>Part-time</option>
-            <option>Probation</option>
-
+        <select name="employmentType" [(ngModel)]="formData.employmentType" required>
+            <option value="">Select</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Probation">Probation</option>
         </select>
     </div>
     <div class="form-group">
         <label>Department</label>
-        <select>
-            <option>Select</option>
-            <option>School Of Business and Accountancy (SBA)</option>
-            <option>School Of Engineering and Architecture (SEA)</option>
-            <option>School Of Arts and Sciences (SAS)</option>
-            <option>School Of Computing (SOC)</option>
-            <option>School Of Hospitality and Tourism Management (SHTM)</option>
-            <option>School Of Education (SED)</option>
-            <option>School Of Nursing and Allied Medical Sciences (SNAMS)</option>
-            <option>College of Criminal Justice Education and Forensics (CCJEF)</option>
+        <select name="department" [(ngModel)]="formData.department" required>
+            <option value="">Select</option>
+            <option value="School Of Business and Accountancy (SBA)">School Of Business and Accountancy (SBA)</option>
+            <option value="School Of Engineering and Architecture (SEA)">School Of Engineering and Architecture (SEA)</option>
+            <option value="School Of Arts and Sciences (SAS)">School Of Arts and Sciences (SAS)</option>
+            <option value="School Of Computing (SOC)">School Of Computing (SOC)</option>
+            <option value="School Of Hospitality and Tourism Management (SHTM)">School Of Hospitality and Tourism Management (SHTM)</option>
+            <option value="School Of Education (SED)">School Of Education (SED)</option>
+            <option value="School Of Nursing and Allied Medical Sciences (SNAMS)">School Of Nursing and Allied Medical Sciences (SNAMS)</option>
+            <option value="College of Criminal Justice Education and Forensics (CCJEF)">College of Criminal Justice Education and Forensics (CCJEF)</option>
         </select>
     </div>
     <div class="form-group">
         <label>Automated Notification</label>
-        <select>
-            <option>Select</option>
-            <option>Yes</option>
-            <option>No</option>
+        <select name="notification" [(ngModel)]="formData.notification" required>
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
         </select>
     </div>
-    <button class="add-new-employee">Add This Employee</button>
-
+    <button type="submit" class="add-new-employee">Add This Employee</button>
+  </form>
 </div>
